@@ -1,14 +1,11 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
 
-
-     Scanner sc = new Scanner(System.in);
-
-   Scanner sc = new Scanner(System.in);
-
+    Scanner sc = new Scanner(System.in);
     ArrayList<ContactPerson> addressBook1 = new ArrayList<>();
 
     public ContactPerson createContact() {
@@ -74,7 +71,6 @@ public class AddressBook {
         }
     }
 
-
     public void deleteContact(){
         boolean isContactFound = false;
         System.out.println("enter name to delete contact");
@@ -93,14 +89,18 @@ public class AddressBook {
             }
         }
         if (!isContactFound) {
-            System.out.println("Opps... contact not found");
+            System.out.println("contact not found");
         }
     }
 
+    void displayContact(){
+        if (addressBook1.isEmpty()) {
+            System.out.println("No contacts to display in the list");
+        } else {
+            for (ContactPerson contactPerson : addressBook1) {
+                System.out.println(contactPerson);
+            }
 
-    void display(){
-        for (ContactPerson person : addressBook1) {
-            System.out.println(person);
         }
     }
 }
